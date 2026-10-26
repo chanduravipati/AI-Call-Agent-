@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Call Sales Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <section class="card" aria-labelledby="title">
+      <div class="eyebrow"><span class="pulse"></span> OUTBOUND VOICE CONSOLE</div>
+      <h1 id="title">AI Call Sales Agent</h1>
+      <p class="subtitle">Start a guided Full Stack course conversation with a prospective student.</p>
+      <form id="call-form">
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" placeholder="+91XXXXXXXXXX" autocomplete="tel" required>
+        <button id="call-button" type="submit"><span class="button-icon">&#9654;</span> Call student</button>
+      </form>
+      <div id="status" class="status" role="status" aria-live="polite">Ready to place a call</div>
+      <div id="loader" class="loader" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="notice">Calls require valid Twilio credentials and a public HTTPS webhook from ngrok.</p>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
